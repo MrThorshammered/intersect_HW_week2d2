@@ -2,25 +2,35 @@ window.onload = function() {
 
 var button1 = document.getElementById('button1')
 var stopsNumber;
-var stopValueA = document.getElementById('stopA').value;
-console.log(stopValueA)
-var stopValueB = document.getElementById('stopb').value;
-console.log(stopValueB)
+
+
+var stopValueA = document.getElementById('stopA');
+
+var stopValueB = document.getElementById('stopb');
+
 
 var subWay = {
-	N: ['8th', 'Union Square', '23rd', '28th', '34th', 'Times Square'],
-	sixth: ['Astor Place', 'Union Square', '23rd', '28th', '33rd', 'Grand Central'],
-	l: ['1st', '3rd', 'Union Square', '6th', '8th',]
+	'lineN' : ['8th', 'unionSquare', '23rd', '28th', '34th', 'timeSquare'],
+	'linesixth' : ['Astor Place', 'Union Square', '23rd', '28th', '33rd', 'Grand Central'],
+	'lineL' : ['1st', '3rd', 'Union Square', '6th', '8th',]
 };
 
 
-getOn = indexOf.call(subWay{N:}, stopValueA);
-console.log(getOn)
-getOff = indexOf.call(subWay{N:}, stopValueB);
-console.log(getOff)
 calculateStops = function(){
-	getOn - getOff
-}
+	getOn = subWay.lineN.indexOf(stopValueA.value);
+    getOff = subWay.lineN.indexOf(stopValueB.value);
+    console.log(getOn);
+    console.log(getOff)
+	stopsNumber = getOn - getOff;
+	console.log('you have ' + stopsNumber + ' stops to go');
+}  
+
+button1.addEventListener('click', function(e){
+	e.preventDefault();
+	console.log('button1 clicked')
+   calculateStops()
+ 
+});
 
 
 // button1.addEventListener('click', function(e){
@@ -36,4 +46,4 @@ calculateStops = function(){
 
 // console.log();
 
-// }
+}
