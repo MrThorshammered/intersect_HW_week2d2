@@ -1,11 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="css/map.css">
 	<title>Train Map</title>
+	<link rel="stylesheet" type="text/css" href="css/map.css">
+	<script type="text/javascript" src="js/map.js"></script>
 </head>
 <body>
+<div id="mapBox">
+  <form id="nLine">
+    <h3>N-line</h3>
+		<select name="stop_a" id="stopA">
+			<option data-num = 6 id="timeSquare">Time Square</option>
+			<option data-num = 5 id="34th">34th</option>
+			<option data-num = 4 id="28th">28th</option>
+			<option data-num = 3 id="23rd">23rd</option>
+			<option data-num = 2 id="unionSquare">UnionSquare</option>
+			<option data-num = 1 id="8th">8th</option>
+		</select>
+	<h3>To</h3>
+	    <select name="stop_b" id="stopb">
+	    	<option data-num = 6 id="timeSquare">Time Square</option>
+			<option data-num = 5 id="34th">34th</option>
+			<option data-num = 4 id="28th">28th</option>
+			<option data-num = 3 id="23rd">23rd</option>
+			<option data-num = 2 id="unionSquare">UnionSquare</option>
+			<option data-num = 1 id="8th">8th</option>
+	    </select>
+	    <button id="button1">Submit</button>
+  </form>
+</div>
 
 </body>
-<script type="text/javascript" src="js/map.js"></script>
 </html>
