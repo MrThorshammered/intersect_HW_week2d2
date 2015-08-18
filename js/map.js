@@ -5,18 +5,22 @@ var stopsNumber;
 
 
 var stopValueA = document.getElementById('stopA');
-
 var stopValueB = document.getElementById('stopb');
+var stopValueC = document.getElementById('stopC');
+var stopValueD = document.getElementById('stopD');
+var stopValueE = document.getElementById('stopE');
+var stopValueF = document.getElementById('stopF');
 
 
 var subWay = {
 	'lineN' : ['8th', 'unionSquare', '23rd', '28th', '34th', 'timeSquare'],
-	'linesixth' : ['Astor Place', 'Union Square', '23rd', '28th', '33rd', 'Grand Central'],
-	'lineL' : ['1st', '3rd', 'Union Square', '6th', '8th',]
+	'linesixth' : ['astorPlace', 'unionSquare', '23rd', '28th', '33rd', 'grandCentral'],
+	'lineL' : ['1st', '3rd', 'unionSquare', '6th', '8th',]
 };
 
+// math for the N-line
 
-calculateStops = function(){
+lineNStops = function(){
 	getOn = subWay.lineN.indexOf(stopValueA.value);
     getOff = subWay.lineN.indexOf(stopValueB.value);
     console.log(getOn);
@@ -28,22 +32,43 @@ calculateStops = function(){
 button1.addEventListener('click', function(e){
 	e.preventDefault();
 	console.log('button1 clicked')
-   calculateStops()
+   lineNStops();
  
 });
 
+// math for the l-line
 
-// button1.addEventListener('click', function(e){
-// 	e.preventDefault();
-// 	console.log('button1 clicked');
-//  calculateStops();
-// });
+lineLStops = function(){
+	getOnL = subWay.lineL.indexOf(stopValueC.value);
+    getOffL = subWay.lineL.indexOf(stopValueD.value);
+    console.log(getOnL);
+    console.log(getOffL)
+	stopsNumberL = getOnL - getOffL;
+	console.log('you have ' + stopsNumberL + ' stops to go');
+}  
 
-// function calculateStops(){
-// 	console.log(stopValueA)
-// stopsNumber = stopValueA + stopValueB;
-// };
+button2.addEventListener('click', function(e){
+	e.preventDefault();
+	console.log('button2 clicked')
+   lineLStops();
+ 
+});
 
-// console.log();
+// math for the 6th line
+lineSixthStops = function(){
+	getOnS = subWay.linesixth.indexOf(stopValueE.value);
+    getOffS = subWay.linesixth.indexOf(stopValueF.value);
+    console.log(getOnS);
+    console.log(getOffS)
+	stopsNumberS = getOnS - getOffS;
+	console.log('you have ' + stopsNumberS + ' stops to go');
+}  
+
+button3.addEventListener('click', function(e){
+	e.preventDefault();
+	console.log('button2 clicked')
+   lineSixthStops();
+ 
+});
 
 }
